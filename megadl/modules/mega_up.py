@@ -33,7 +33,7 @@ from megadl.helpers.pyros import track_progress
 async def up_to(_: CypherClient, msg: Message):
     _mid = msg.id
     await msg.reply(
-        "**Select what you want to do 🤗**",
+        "**Select what you want to do **",
         reply_markup=InlineKeyboardMarkup(
             [
                 [InlineKeyboardButton("Upload 🗃", callback_data=f"up_tgdl-{_mid}")],
