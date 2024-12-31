@@ -125,7 +125,7 @@ class MeganzClient(Client):
         print("> Checking for updates")
         try:
             remote_updates = requests.get(
-                "https://raw.githubusercontent.com/Itz-fork/Mega.nz-Bot/main/updates.json"
+                "https://raw.githubusercontent.com/TheOnlyMrWiki/Mega.nz-Bot/main/updates.json"
             ).json()
             
             with open("updates.json", "r") as f:
@@ -202,7 +202,7 @@ class MeganzClient(Client):
                 if not can_use:
                     await self.cyeor(
                         msg,
-                        "`You're not authorized to use this bot 🙅‍♂️` \n\n**Join @NexaBotsUpdates ❤️**",
+                        "`You're not authorized to use this bot 🙅‍♂️` \n\n**MSG @TEV1L **",
                         True,
                     )
                     return msg.stop_propagation()
@@ -222,7 +222,7 @@ class MeganzClient(Client):
                 await self.full_cleanup(self.dl_loc, uid)
             # Other exceptions
             except Exception as e:
-                await self.cyeor(msg, f"**Oops 🫨, Somethig bad happend!** \n\n`{e}`")
+                await self.cyeor(msg, f"**Oops 🫨, Somethig went wrong** \n\n`{e}`")
                 await self.full_cleanup(f"{self.dl_loc}/{uid}", uid)
                 logging.warning(
                     _emsg.format(func.__name__, self.version, func.__module__, e)
