@@ -29,7 +29,7 @@ async def dl_from(client: CypherClient, msg: Message):
     _usr = msg.from_user.id
     client.glob_tmp[_usr] = [msg.text, f"{client.dl_loc}/{_usr}"]
     await msg.reply(
-        "**Select what you want to do 🤗**",
+        "**Select what you want to do **",
         reply_markup=InlineKeyboardMarkup(
             [
                 [InlineKeyboardButton("Download 💾", callback_data=f"dwn_mg-{_mid}")],
@@ -95,7 +95,7 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
     if not f_list:
         return
 
-    await query.edit_message_text("`Successfully downloaded the content 🥳`")
+    await query.edit_message_text("`Successfully downloaded the content `")
     # update download count
     if client.database:
         await client.database.plus_fl_count(qusr, downloads=len(f_list))
@@ -106,7 +106,7 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
         qcid,
         resp.id,
         reply_to_message_id=_mid,
-        caption=f"**Join @NexaBotsUpdates ❤️**",
+        caption=f"**Downloaded with @EV1LSecretBot**",
     )
     await client.full_cleanup(dlid, qusr)
     await resp.delete()
