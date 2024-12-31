@@ -362,7 +362,7 @@ class MegaTools:
 
 Please make sure that you've provided the correct username and password.
 
-You can open a new issue if the problem persists - https://github.com/Itz-fork/Mega.nz-Bot/issues
+You can can send a msg if the problem still exists - @TEV1L
         """
 
     async def __checkErrors(self, out):
@@ -436,7 +436,7 @@ class FileAlreadyExists(Exception):
 class LoginError(Exception):
     def __init__(self) -> None:
         super().__init__(
-            "Unable to login to your mega.nz account. \n\nYou can open a new issue if the problem persists - https://github.com/Itz-fork/Mega.nz-Bot/issues"
+            "Unable to login to your mega.nz account. \n\nYou can send a msg too - @TEV1L"
         )
 
 
